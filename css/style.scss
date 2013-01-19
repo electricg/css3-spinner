@@ -1,0 +1,59 @@
+$w: 10px;
+$points: 5;
+$ray: 100px;
+$color1: #000;
+$color2: #FFF;
+$speed: 2s;
+
+$angle: 360deg / $points;
+
+@function shadow($sel: 0) {
+	$shadow: ();
+	@for $i from 0 through $points {
+		$x: ($ray) * cos($angle * $i);
+		$y: ($ray) * sin($angle  * $i);
+		$color: $color1;
+		@if $sel == $i {
+			$color: $color2;
+		}
+		$t: $x $y 0 $color;
+		$shadow: append($shadow, $t, comma);
+	}
+	@return $shadow;
+}
+
+@mixin animation() {
+	@for $i from 0 through $points {
+		$time: 100% / $points * $i;
+		#{$time} {
+			box-shadow: shadow($i - 1);
+		}
+	}
+}
+
+.loader {
+	height: $ray * 2 + $w;
+	width: $ray * 2 + $w;
+	position: relative;
+	
+	&:after {
+		background: transparent;
+		border-radius: 100%;
+		content: "";
+		display: block;
+		height: $w;
+		width: $w;
+		position: absolute;
+		top: $ray ;
+		left: $ray;
+
+		box-shadow: shadow();
+	-webkit-animation: shadow $speed infinite linear;
+	        animation: shadow $speed infinite linear;
+	}
+}
+
+@-webkit-keyframes shadow { @include animation; }
+   // @-moz-keyframes shadow { @include animation; }
+     // @-o-keyframes shadow { @include animation; }
+        // @keyframes shadow { @include animation; }

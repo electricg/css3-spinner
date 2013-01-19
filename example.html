@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Css3 Spinner example</title>
+	<!-- <link rel="stylesheet" type="text/css" href="css/style.css"> -->
+	<style>
+body {
+	background: #1089E6;
+	padding: 50px;
+}
+	</style>
+	<style id="loader-style"></style>
+</head>
+<body>
+	<form action="#">
+		<div>
+			<label>Points: <input type="text" id="points" value="5"></label>
+		</div>
+		<div>
+			<label>Points size <sub>(in pixels)</sub>: <input type="text" id="size" value="10"></label>
+		</div>
+		<div>
+			<label>Loader size <sub>(in pixels)</sub>: <input type="text" id="loaderSize" value="210"></label>
+		</div>
+		<div>
+			<label>Animation speed <sub>(in seconds)</sub>: <input type="text" id="speed" value="2"></label>
+		</div>
+		<div>
+			<label>Color: <input type="text" id="color1" value="#000"></label>
+		</div>
+		<div>
+			<label>Highlight color: <input type="text" id="color2" value="#FFF"></label>
+		</div>
+		<div>
+			<input type="button" id="create" value="Create">
+		</div>
+	</form>
+	<hr>
+	
+	<div class="loader"></div>
+	
+	<script src="js/jquery-1.9.0.min.js"></script>
+	<script src="js/main.js"></script>
+	<script>
+(function($) {
+	var par = ['size', 'points', 'loaderSize', 'color1', 'color2', 'speed'],
+		$el = [],
+		$style = $('#loader-style');
+	
+	for (var i = 0; i < par.length; i++) {
+		$el.push( $('#' + par[i]) );
+	} 
+
+	$('#create').click(function() {
+		var opts = {},
+			css;
+
+		for (var i = 0; i < par.length; i++) {
+			opts[par[i]] = $el[i].val();
+		}
+
+		css = loader(opts);
+		$style.html('').html(css);
+	});
+})(jQuery);
+	</script>
+</body>
+</html>
