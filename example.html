@@ -15,25 +15,36 @@ body {
 <body>
 	<form action="#">
 		<div>
-			<label>Points: <input type="text" id="points" value="5"></label>
+			<label for="points">Points:</label>
+			<input type="range" name="points" id="points" min="3" max="100" value="5">
+			<output for="points" name="pointsOutput"></output>
 		</div>
 		<div>
-			<label>Points size <sub>(in pixels)</sub>: <input type="text" id="size" value="10"></label>
+			<label for="size">Points size <sub>(in pixels)</sub>:</label>
+			<input type="range" name="size" id="size" min="1" max="100" value="10">
+			<output for="size" name="sizeOutput"></output>
 		</div>
 		<div>
-			<label>Loader size <sub>(in pixels)</sub>: <input type="text" id="loaderSize" value="210"></label>
+			<label for="loaderSize">Loader size <sub>(in pixels)</sub>:</label>
+			<input type="range" name="loaderSize" id="loaderSize" min="5" max="500" value="210">
+			<output for="loaderSize" name="loaderSizeOutput"></output>
 		</div>
 		<div>
-			<label>Animation speed <sub>(in seconds)</sub>: <input type="text" id="speed" value="2"></label>
+			<label for="speed">Animation speed <sub>(in seconds)</sub>:</label>
+			<input type="range" name="speed" id="speed" step="0.1" min="0" max="10" value="2">
+			<output for="speed" name="speedOutput"></output>
 		</div>
 		<div>
-			<label>Color: <input type="text" id="color1" value="#000"></label>
+			<label for="color1">Color:</label>
+			<input type="text" id="color1" value="#000">
 		</div>
 		<div>
-			<label>Highlight color: <input type="text" id="color2" value="#FFF"></label>
+			<label for="color2">Highlight color:</label>
+			<input type="text" id="color2" value="#FFF">
 		</div>
 		<div>
-			<input type="button" id="create" value="Create">
+			<input type="button" id="getCode" value="Get code">
+			<textarea id="code" cols="30" rows="10"></textarea>
 		</div>
 	</form>
 	<hr>
@@ -44,25 +55,43 @@ body {
 	<script src="js/main.js"></script>
 	<script>
 (function($) {
+
 	var par = ['size', 'points', 'loaderSize', 'color1', 'color2', 'speed'],
+		parLength = par.length,
 		$el = [],
-		$style = $('#loader-style');
+		$elOutput = [],
+		$style = $('#loader-style'),
+		$code = $('#code'),
+		$getCode = $('#getCode'),
+		css;
 	
-	for (var i = 0; i < par.length; i++) {
+	for (var i = 0; i < parLength; i++) {
 		$el.push( $('#' + par[i]) );
-	} 
+		$elOutput.push( $('output[for=' + par[i] + ']') );
+	}
 
-	$('#create').click(function() {
-		var opts = {},
-			css;
-
-		for (var i = 0; i < par.length; i++) {
+	function init() {
+		var opts = {};
+		for (var i = 0; i < parLength; i++) {
+			$elOutput[i].val( $el[i].val() );
 			opts[par[i]] = $el[i].val();
 		}
-
 		css = loader(opts);
 		$style.html('').html(css);
+	}
+
+	init();
+
+	for (var i = 0; i < parLength; i++) {
+		$el[i].change(function() {
+			init();
+		});
+	}
+
+	$getCode.click(function() {
+		$code.val(css);
 	});
+
 })(jQuery);
 	</script>
 </body>
