@@ -22,7 +22,8 @@ function loader(opts) {
 		angle = Math.PI * 2 / points, // radians
 		loaderHeight = loaderWidth = loaderSize,
 		speed = speedN + umTime,
-		frame = 100 / points;
+		frame = 100 / points,
+		prefix = ['-webkit-', '-moz-', '-o-', ''];
 
 	function shadow(sel) {
 		var result = [],
@@ -37,7 +38,7 @@ function loader(opts) {
 			}
 			result.push( [x + umLenght, y + umLenght, color].join(' ') );
 		}
-		return result.join(',');
+		return result.join(', ');
 	}
 
 	function keyframes() {
@@ -54,32 +55,40 @@ function loader(opts) {
 		return result;
 	}
 
+	function prefixKeyframes() {
+		var string = '';
+		for (var i = 0; i < prefix.length; i++) {
+			string += "@" + prefix[i] + "keyframes " + animationName + " {\
+				" + keyframes() + "\
+			}";
+		}
+		return string;
+	}
+
 
 	string = "\
-	.loader {\
-		height: " + loaderHeight + umLenght + ";\
-		width: " + loaderWidth + umLenght + ";\
-		position: relative;\
-	}\
-	.loader:after {\
-		background: transparent;\
-		border-radius: 100%;\
-		content: '';\
-		display: block;\
-		height: " + size + umLenght + ";\
-		width: " + size + umLenght + ";\
-		position: absolute;\
-		top: " + ray + umLenght + ";\
-		left: " + ray + umLenght +";\
-	\
-		-webkit-animation: " + animationName + " " + speed + " infinite linear;\
-		        animation: " + animationName + " " + speed + " infinite linear;\
-		box-shadow: " + shadow(0) + ";\
-	}\
-	@-webkit-keyframes shadow {\
-		" + keyframes() + "\
-	}\
-	";
+.loader {\
+	height: " + loaderHeight + umLenght + ";\
+	width: " + loaderWidth + umLenght + ";\
+	position: relative;\
+}\
+.loader:after {\
+	background: transparent;\
+	border-radius: 100%;\
+	content: '';\
+	display: block;\
+	height: " + size + umLenght + ";\
+	width: " + size + umLenght + ";\
+	position: absolute;\
+	top: " + ray + umLenght + ";\
+	left: " + ray + umLenght +";\
+\
+	-webkit-animation: " + animationName + " " + speed + " infinite linear;\
+	        animation: " + animationName + " " + speed + " infinite linear;\
+	box-shadow: " + shadow(0) + ";\
+}\
+" + prefixKeyframes() + "\
+";
 
 	return string;
 }

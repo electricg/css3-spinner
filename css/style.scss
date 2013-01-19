@@ -54,6 +54,6 @@ $angle: 360deg / $points;
 }
 
 @-webkit-keyframes shadow { @include animation; }
-   // @-moz-keyframes shadow { @include animation; }
-     // @-o-keyframes shadow { @include animation; }
-        // @keyframes shadow { @include animation; }
+   @-moz-keyframes shadow { @include animation; }
+     @-o-keyframes shadow { @include animation; }
+        @keyframes shadow { @include animation; }

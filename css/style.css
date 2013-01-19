@@ -51,3 +51,99 @@
     box-shadow: 100px 0px 0 black, 30.9017px 95.10565px 0 black, -80.9017px 58.77853px 0 black, -80.9017px -58.77853px 0 black, 30.9017px -95.10565px 0 white, 100px 0.0px 0 black;
   }
 }
+
+@-moz-keyframes shadow {
+  /* line 28, style.scss */
+  0% {
+    box-shadow: 100px 0px 0 black, 30.9017px 95.10565px 0 black, -80.9017px 58.77853px 0 black, -80.9017px -58.77853px 0 black, 30.9017px -95.10565px 0 black, 100px 0.0px 0 black;
+  }
+
+  /* line 28, style.scss */
+  20% {
+    box-shadow: 100px 0px 0 white, 30.9017px 95.10565px 0 black, -80.9017px 58.77853px 0 black, -80.9017px -58.77853px 0 black, 30.9017px -95.10565px 0 black, 100px 0.0px 0 black;
+  }
+
+  /* line 28, style.scss */
+  40% {
+    box-shadow: 100px 0px 0 black, 30.9017px 95.10565px 0 white, -80.9017px 58.77853px 0 black, -80.9017px -58.77853px 0 black, 30.9017px -95.10565px 0 black, 100px 0.0px 0 black;
+  }
+
+  /* line 28, style.scss */
+  60% {
+    box-shadow: 100px 0px 0 black, 30.9017px 95.10565px 0 black, -80.9017px 58.77853px 0 white, -80.9017px -58.77853px 0 black, 30.9017px -95.10565px 0 black, 100px 0.0px 0 black;
+  }
+
+  /* line 28, style.scss */
+  80% {
+    box-shadow: 100px 0px 0 black, 30.9017px 95.10565px 0 black, -80.9017px 58.77853px 0 black, -80.9017px -58.77853px 0 white, 30.9017px -95.10565px 0 black, 100px 0.0px 0 black;
+  }
+
+  /* line 28, style.scss */
+  100% {
+    box-shadow: 100px 0px 0 black, 30.9017px 95.10565px 0 black, -80.9017px 58.77853px 0 black, -80.9017px -58.77853px 0 black, 30.9017px -95.10565px 0 white, 100px 0.0px 0 black;
+  }
+}
+
+@-o-keyframes shadow {
+  /* line 28, style.scss */
+  0% {
+    box-shadow: 100px 0px 0 black, 30.9017px 95.10565px 0 black, -80.9017px 58.77853px 0 black, -80.9017px -58.77853px 0 black, 30.9017px -95.10565px 0 black, 100px 0.0px 0 black;
+  }
+
+  /* line 28, style.scss */
+  20% {
+    box-shadow: 100px 0px 0 white, 30.9017px 95.10565px 0 black, -80.9017px 58.77853px 0 black, -80.9017px -58.77853px 0 black, 30.9017px -95.10565px 0 black, 100px 0.0px 0 black;
+  }
+
+  /* line 28, style.scss */
+  40% {
+    box-shadow: 100px 0px 0 black, 30.9017px 95.10565px 0 white, -80.9017px 58.77853px 0 black, -80.9017px -58.77853px 0 black, 30.9017px -95.10565px 0 black, 100px 0.0px 0 black;
+  }
+
+  /* line 28, style.scss */
+  60% {
+    box-shadow: 100px 0px 0 black, 30.9017px 95.10565px 0 black, -80.9017px 58.77853px 0 white, -80.9017px -58.77853px 0 black, 30.9017px -95.10565px 0 black, 100px 0.0px 0 black;
+  }
+
+  /* line 28, style.scss */
+  80% {
+    box-shadow: 100px 0px 0 black, 30.9017px 95.10565px 0 black, -80.9017px 58.77853px 0 black, -80.9017px -58.77853px 0 white, 30.9017px -95.10565px 0 black, 100px 0.0px 0 black;
+  }
+
+  /* line 28, style.scss */
+  100% {
+    box-shadow: 100px 0px 0 black, 30.9017px 95.10565px 0 black, -80.9017px 58.77853px 0 black, -80.9017px -58.77853px 0 black, 30.9017px -95.10565px 0 white, 100px 0.0px 0 black;
+  }
+}
+
+@keyframes shadow {
+  /* line 28, style.scss */
+  0% {
+    box-shadow: 100px 0px 0 black, 30.9017px 95.10565px 0 black, -80.9017px 58.77853px 0 black, -80.9017px -58.77853px 0 black, 30.9017px -95.10565px 0 black, 100px 0.0px 0 black;
+  }
+
+  /* line 28, style.scss */
+  20% {
+    box-shadow: 100px 0px 0 white, 30.9017px 95.10565px 0 black, -80.9017px 58.77853px 0 black, -80.9017px -58.77853px 0 black, 30.9017px -95.10565px 0 black, 100px 0.0px 0 black;
+  }
+
+  /* line 28, style.scss */
+  40% {
+    box-shadow: 100px 0px 0 black, 30.9017px 95.10565px 0 white, -80.9017px 58.77853px 0 black, -80.9017px -58.77853px 0 black, 30.9017px -95.10565px 0 black, 100px 0.0px 0 black;
+  }
+
+  /* line 28, style.scss */
+  60% {
+    box-shadow: 100px 0px 0 black, 30.9017px 95.10565px 0 black, -80.9017px 58.77853px 0 white, -80.9017px -58.77853px 0 black, 30.9017px -95.10565px 0 black, 100px 0.0px 0 black;
+  }
+
+  /* line 28, style.scss */
+  80% {
+    box-shadow: 100px 0px 0 black, 30.9017px 95.10565px 0 black, -80.9017px 58.77853px 0 black, -80.9017px -58.77853px 0 white, 30.9017px -95.10565px 0 black, 100px 0.0px 0 black;
+  }
+
+  /* line 28, style.scss */
+  100% {
+    box-shadow: 100px 0px 0 black, 30.9017px 95.10565px 0 black, -80.9017px 58.77853px 0 black, -80.9017px -58.77853px 0 black, 30.9017px -95.10565px 0 white, 100px 0.0px 0 black;
+  }
+}
