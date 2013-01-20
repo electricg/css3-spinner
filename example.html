@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<title>Css3 Spinner example</title>
 	<link href='http://fonts.googleapis.com/css?family=Andika' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/spectrum.css">
 	<style>
 *, *:after, *:before {
 	-webkit-box-sizing: border-box;
@@ -29,7 +30,7 @@ abbr {
 	font-variant: small-caps;
 	text-transform: lowercase;
 }
-form div {
+form > div {
 	margin: 0 0 1em;
 }
 label {
@@ -86,7 +87,7 @@ textarea {
 }
 
 @media only screen and (min-width: 600px) {
-	form div {
+	form > div {
 		display: table;
 		width: 100%;
 	}
@@ -125,11 +126,11 @@ textarea {
 		</div>
 		<div>
 			<label for="color1">Color:</label>
-			<input type="text" id="color1" value="#000">
+			<input type="text" class="js-input-color" id="color1" value="#000">
 		</div>
 		<div>
 			<label for="color2">Highlight color:</label>
-			<input type="text" id="color2" value="#FFF">
+			<input type="text" class="js-input-color" id="color2" value="#FFF">
 		</div>
 	</form>
 	
@@ -149,6 +150,7 @@ textarea {
 	</div>
 	
 	<script src="js/jquery-1.9.0.min.js"></script>
+	<script src="js/spectrum.js"></script>
 	<script src="js/main.js"></script>
 	<script>
 (function($) {
@@ -187,6 +189,12 @@ textarea {
 
 	$getCode.click(function() {
 		$code.removeClass('hide').val(css);
+	});
+
+	// Color picker
+	$(".js-input-color").spectrum({
+		showInput: true,
+		showAlpha: true
 	});
 
 })(jQuery);
