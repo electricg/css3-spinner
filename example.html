@@ -10,13 +10,16 @@
 	   -moz-box-sizing: border-box;
 	        box-sizing: border-box;
 }
+html {
+	padding: 0 10% 10%;
+}
 body {
 	background: #EEE;
 	color: #333;
 	margin: 0 auto;
-	max-width: 600px;
-	padding: 0 10% 10%;
+	max-width: 700px;
 	text-shadow: 0px 0px 1px #AAA;
+	width: 100%;
 }
 body, input, textarea {
 	font-family: Andika, sans-serif;
@@ -29,14 +32,20 @@ abbr {
 form div {
 	margin: 0 0 1em;
 }
+label {
+	display: inline-block;
+	max-width: 100%;
+	width: 220px;
+}
 sub {
 	vertical-align: baseline;
 }
 input {
-	width: 100%;
+	max-width: 100%;
+	width: 200px;
 }
 input[type=text] {
-	padding: 0.5em;
+	padding: 0 0.2em;
 }
 input[type=button] {
 	background: #CCC;
@@ -53,19 +62,40 @@ input[type=button]:focus {
 }
 input[type=button]:active {
 }
+output {
+	text-align: right;
+	width: 50px;
+}
 textarea {
 	display: block;
 	height: 16em;
 	width: 100%;
 }
+.hide {
+	display: none;
+}
 .result {
 	border: 1px solid #AAA;
 	margin: 1em 0;
+	overflow: auto;
 	padding: 1em;
 	text-align: center;
 }
 .loader {
 	display: inline-block;
+}
+
+@media only screen and (min-width: 600px) {
+	form div {
+		display: table;
+		width: 100%;
+	}
+	label, input, output {
+		display: table-cell;
+	}
+	input[type=range] {
+		width: 100%;
+	}
 }
 	</style>
 	<style id="loader-style"></style>
@@ -75,23 +105,23 @@ textarea {
 	<form action="#">
 		<div>
 			<label for="points">Points:</label>
-			<output for="points" name="pointsOutput"></output>
 			<input type="range" name="points" id="points" min="3" max="100" value="5">
+			<output for="points" name="pointsOutput"></output>
 		</div>
 		<div>
 			<label for="size">Points size <sub>(in pixels)</sub>:</label>
-			<output for="size" name="sizeOutput"></output>
 			<input type="range" name="size" id="size" min="1" max="100" value="10">
+			<output for="size" name="sizeOutput"></output>
 		</div>
 		<div>
 			<label for="loaderSize">Loader size <sub>(in pixels)</sub>:</label>
-			<output for="loaderSize" name="loaderSizeOutput"></output>
 			<input type="range" name="loaderSize" id="loaderSize" min="5" max="500" value="210">
+			<output for="loaderSize" name="loaderSizeOutput"></output>
 		</div>
 		<div>
 			<label for="speed">Animation speed <sub>(in seconds)</sub>:</label>
-			<output for="speed" name="speedOutput"></output>
 			<input type="range" name="speed" id="speed" step="0.1" min="0" max="10" value="2">
+			<output for="speed" name="speedOutput"></output>
 		</div>
 		<div>
 			<label for="color1">Color:</label>
@@ -103,14 +133,19 @@ textarea {
 		</div>
 	</form>
 	
-	<h3>Preview:</h3>
+	<h4>Preview:</h4>
 	<div class="result">
 		<div class="loader"></div>
 	</div>
 	
+	<h4>Support:</h4>
+	<p>Chrome 26+, Firefox 4+.<br>
+	Opera doesn't support pseudo elements animations.</p>
+	</ul>
+	
 	<div>
 		<input type="button" id="getCode" value="Get code">
-		<textarea id="code" cols="30" rows="10"></textarea>
+		<textarea id="code" cols="30" rows="10" class="hide"></textarea>
 	</div>
 	
 	<script src="js/jquery-1.9.0.min.js"></script>
@@ -151,7 +186,7 @@ textarea {
 	}
 
 	$getCode.click(function() {
-		$code.val(css);
+		$code.removeClass('hide').val(css);
 	});
 
 })(jQuery);
