@@ -29,7 +29,7 @@ function loader(opts) {
 		var result = [],
 			color,
 			x = y = 0;
-		for (var i = 0; i <= points; i++) {
+		for (var i = 0; i < points; i++) {
 			x = (ray * Math.cos(angle * i)).toFixed(5);
 			y = (ray * Math.sin(angle * i)).toFixed(5);
 			color = color1;

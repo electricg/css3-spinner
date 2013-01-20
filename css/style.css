@@ -15,7 +15,7 @@
   position: absolute;
   top: 100px;
   left: 100px;
-  box-shadow: 100px 0px 0 white, 30.9017px 95.10565px 0 black, -80.9017px 58.77853px 0 black, -80.9017px -58.77853px 0 black, 30.9017px -95.10565px 0 black, 100px 0.0px 0 black;
+  box-shadow: 100px 0px 0 white, 30.9017px 95.10565px 0 black, -80.9017px 58.77853px 0 black, -80.9017px -58.77853px 0 black, 30.9017px -95.10565px 0 black;
   -webkit-animation: shadow 2s infinite linear;
   animation: shadow 2s infinite linear;
 }
@@ -23,127 +23,127 @@
 @-webkit-keyframes shadow {
   /* line 28, style.scss */
   0% {
-    box-shadow: 100px 0px 0 black, 30.9017px 95.10565px 0 black, -80.9017px 58.77853px 0 black, -80.9017px -58.77853px 0 black, 30.9017px -95.10565px 0 black, 100px 0.0px 0 black;
+    box-shadow: 100px 0px 0 black, 30.9017px 95.10565px 0 black, -80.9017px 58.77853px 0 black, -80.9017px -58.77853px 0 black, 30.9017px -95.10565px 0 black;
   }
 
   /* line 28, style.scss */
   20% {
-    box-shadow: 100px 0px 0 white, 30.9017px 95.10565px 0 black, -80.9017px 58.77853px 0 black, -80.9017px -58.77853px 0 black, 30.9017px -95.10565px 0 black, 100px 0.0px 0 black;
+    box-shadow: 100px 0px 0 white, 30.9017px 95.10565px 0 black, -80.9017px 58.77853px 0 black, -80.9017px -58.77853px 0 black, 30.9017px -95.10565px 0 black;
   }
 
   /* line 28, style.scss */
   40% {
-    box-shadow: 100px 0px 0 black, 30.9017px 95.10565px 0 white, -80.9017px 58.77853px 0 black, -80.9017px -58.77853px 0 black, 30.9017px -95.10565px 0 black, 100px 0.0px 0 black;
+    box-shadow: 100px 0px 0 black, 30.9017px 95.10565px 0 white, -80.9017px 58.77853px 0 black, -80.9017px -58.77853px 0 black, 30.9017px -95.10565px 0 black;
   }
 
   /* line 28, style.scss */
   60% {
-    box-shadow: 100px 0px 0 black, 30.9017px 95.10565px 0 black, -80.9017px 58.77853px 0 white, -80.9017px -58.77853px 0 black, 30.9017px -95.10565px 0 black, 100px 0.0px 0 black;
+    box-shadow: 100px 0px 0 black, 30.9017px 95.10565px 0 black, -80.9017px 58.77853px 0 white, -80.9017px -58.77853px 0 black, 30.9017px -95.10565px 0 black;
   }
 
   /* line 28, style.scss */
   80% {
-    box-shadow: 100px 0px 0 black, 30.9017px 95.10565px 0 black, -80.9017px 58.77853px 0 black, -80.9017px -58.77853px 0 white, 30.9017px -95.10565px 0 black, 100px 0.0px 0 black;
+    box-shadow: 100px 0px 0 black, 30.9017px 95.10565px 0 black, -80.9017px 58.77853px 0 black, -80.9017px -58.77853px 0 white, 30.9017px -95.10565px 0 black;
   }
 
   /* line 28, style.scss */
   100% {
-    box-shadow: 100px 0px 0 black, 30.9017px 95.10565px 0 black, -80.9017px 58.77853px 0 black, -80.9017px -58.77853px 0 black, 30.9017px -95.10565px 0 white, 100px 0.0px 0 black;
+    box-shadow: 100px 0px 0 black, 30.9017px 95.10565px 0 black, -80.9017px 58.77853px 0 black, -80.9017px -58.77853px 0 black, 30.9017px -95.10565px 0 white;
   }
 }
 
 @-moz-keyframes shadow {
   /* line 28, style.scss */
   0% {
-    box-shadow: 100px 0px 0 black, 30.9017px 95.10565px 0 black, -80.9017px 58.77853px 0 black, -80.9017px -58.77853px 0 black, 30.9017px -95.10565px 0 black, 100px 0.0px 0 black;
+    box-shadow: 100px 0px 0 black, 30.9017px 95.10565px 0 black, -80.9017px 58.77853px 0 black, -80.9017px -58.77853px 0 black, 30.9017px -95.10565px 0 black;
   }
 
   /* line 28, style.scss */
   20% {
-    box-shadow: 100px 0px 0 white, 30.9017px 95.10565px 0 black, -80.9017px 58.77853px 0 black, -80.9017px -58.77853px 0 black, 30.9017px -95.10565px 0 black, 100px 0.0px 0 black;
+    box-shadow: 100px 0px 0 white, 30.9017px 95.10565px 0 black, -80.9017px 58.77853px 0 black, -80.9017px -58.77853px 0 black, 30.9017px -95.10565px 0 black;
   }
 
   /* line 28, style.scss */
   40% {
-    box-shadow: 100px 0px 0 black, 30.9017px 95.10565px 0 white, -80.9017px 58.77853px 0 black, -80.9017px -58.77853px 0 black, 30.9017px -95.10565px 0 black, 100px 0.0px 0 black;
+    box-shadow: 100px 0px 0 black, 30.9017px 95.10565px 0 white, -80.9017px 58.77853px 0 black, -80.9017px -58.77853px 0 black, 30.9017px -95.10565px 0 black;
   }
 
   /* line 28, style.scss */
   60% {
-    box-shadow: 100px 0px 0 black, 30.9017px 95.10565px 0 black, -80.9017px 58.77853px 0 white, -80.9017px -58.77853px 0 black, 30.9017px -95.10565px 0 black, 100px 0.0px 0 black;
+    box-shadow: 100px 0px 0 black, 30.9017px 95.10565px 0 black, -80.9017px 58.77853px 0 white, -80.9017px -58.77853px 0 black, 30.9017px -95.10565px 0 black;
   }
 
   /* line 28, style.scss */
   80% {
-    box-shadow: 100px 0px 0 black, 30.9017px 95.10565px 0 black, -80.9017px 58.77853px 0 black, -80.9017px -58.77853px 0 white, 30.9017px -95.10565px 0 black, 100px 0.0px 0 black;
+    box-shadow: 100px 0px 0 black, 30.9017px 95.10565px 0 black, -80.9017px 58.77853px 0 black, -80.9017px -58.77853px 0 white, 30.9017px -95.10565px 0 black;
   }
 
   /* line 28, style.scss */
   100% {
-    box-shadow: 100px 0px 0 black, 30.9017px 95.10565px 0 black, -80.9017px 58.77853px 0 black, -80.9017px -58.77853px 0 black, 30.9017px -95.10565px 0 white, 100px 0.0px 0 black;
+    box-shadow: 100px 0px 0 black, 30.9017px 95.10565px 0 black, -80.9017px 58.77853px 0 black, -80.9017px -58.77853px 0 black, 30.9017px -95.10565px 0 white;
   }
 }
 
 @-o-keyframes shadow {
   /* line 28, style.scss */
   0% {
-    box-shadow: 100px 0px 0 black, 30.9017px 95.10565px 0 black, -80.9017px 58.77853px 0 black, -80.9017px -58.77853px 0 black, 30.9017px -95.10565px 0 black, 100px 0.0px 0 black;
+    box-shadow: 100px 0px 0 black, 30.9017px 95.10565px 0 black, -80.9017px 58.77853px 0 black, -80.9017px -58.77853px 0 black, 30.9017px -95.10565px 0 black;
   }
 
   /* line 28, style.scss */
   20% {
-    box-shadow: 100px 0px 0 white, 30.9017px 95.10565px 0 black, -80.9017px 58.77853px 0 black, -80.9017px -58.77853px 0 black, 30.9017px -95.10565px 0 black, 100px 0.0px 0 black;
+    box-shadow: 100px 0px 0 white, 30.9017px 95.10565px 0 black, -80.9017px 58.77853px 0 black, -80.9017px -58.77853px 0 black, 30.9017px -95.10565px 0 black;
   }
 
   /* line 28, style.scss */
   40% {
-    box-shadow: 100px 0px 0 black, 30.9017px 95.10565px 0 white, -80.9017px 58.77853px 0 black, -80.9017px -58.77853px 0 black, 30.9017px -95.10565px 0 black, 100px 0.0px 0 black;
+    box-shadow: 100px 0px 0 black, 30.9017px 95.10565px 0 white, -80.9017px 58.77853px 0 black, -80.9017px -58.77853px 0 black, 30.9017px -95.10565px 0 black;
   }
 
   /* line 28, style.scss */
   60% {
-    box-shadow: 100px 0px 0 black, 30.9017px 95.10565px 0 black, -80.9017px 58.77853px 0 white, -80.9017px -58.77853px 0 black, 30.9017px -95.10565px 0 black, 100px 0.0px 0 black;
+    box-shadow: 100px 0px 0 black, 30.9017px 95.10565px 0 black, -80.9017px 58.77853px 0 white, -80.9017px -58.77853px 0 black, 30.9017px -95.10565px 0 black;
   }
 
   /* line 28, style.scss */
   80% {
-    box-shadow: 100px 0px 0 black, 30.9017px 95.10565px 0 black, -80.9017px 58.77853px 0 black, -80.9017px -58.77853px 0 white, 30.9017px -95.10565px 0 black, 100px 0.0px 0 black;
+    box-shadow: 100px 0px 0 black, 30.9017px 95.10565px 0 black, -80.9017px 58.77853px 0 black, -80.9017px -58.77853px 0 white, 30.9017px -95.10565px 0 black;
   }
 
   /* line 28, style.scss */
   100% {
-    box-shadow: 100px 0px 0 black, 30.9017px 95.10565px 0 black, -80.9017px 58.77853px 0 black, -80.9017px -58.77853px 0 black, 30.9017px -95.10565px 0 white, 100px 0.0px 0 black;
+    box-shadow: 100px 0px 0 black, 30.9017px 95.10565px 0 black, -80.9017px 58.77853px 0 black, -80.9017px -58.77853px 0 black, 30.9017px -95.10565px 0 white;
   }
 }
 
 @keyframes shadow {
   /* line 28, style.scss */
   0% {
-    box-shadow: 100px 0px 0 black, 30.9017px 95.10565px 0 black, -80.9017px 58.77853px 0 black, -80.9017px -58.77853px 0 black, 30.9017px -95.10565px 0 black, 100px 0.0px 0 black;
+    box-shadow: 100px 0px 0 black, 30.9017px 95.10565px 0 black, -80.9017px 58.77853px 0 black, -80.9017px -58.77853px 0 black, 30.9017px -95.10565px 0 black;
   }
 
   /* line 28, style.scss */
   20% {
-    box-shadow: 100px 0px 0 white, 30.9017px 95.10565px 0 black, -80.9017px 58.77853px 0 black, -80.9017px -58.77853px 0 black, 30.9017px -95.10565px 0 black, 100px 0.0px 0 black;
+    box-shadow: 100px 0px 0 white, 30.9017px 95.10565px 0 black, -80.9017px 58.77853px 0 black, -80.9017px -58.77853px 0 black, 30.9017px -95.10565px 0 black;
   }
 
   /* line 28, style.scss */
   40% {
-    box-shadow: 100px 0px 0 black, 30.9017px 95.10565px 0 white, -80.9017px 58.77853px 0 black, -80.9017px -58.77853px 0 black, 30.9017px -95.10565px 0 black, 100px 0.0px 0 black;
+    box-shadow: 100px 0px 0 black, 30.9017px 95.10565px 0 white, -80.9017px 58.77853px 0 black, -80.9017px -58.77853px 0 black, 30.9017px -95.10565px 0 black;
   }
 
   /* line 28, style.scss */
   60% {
-    box-shadow: 100px 0px 0 black, 30.9017px 95.10565px 0 black, -80.9017px 58.77853px 0 white, -80.9017px -58.77853px 0 black, 30.9017px -95.10565px 0 black, 100px 0.0px 0 black;
+    box-shadow: 100px 0px 0 black, 30.9017px 95.10565px 0 black, -80.9017px 58.77853px 0 white, -80.9017px -58.77853px 0 black, 30.9017px -95.10565px 0 black;
   }
 
   /* line 28, style.scss */
   80% {
-    box-shadow: 100px 0px 0 black, 30.9017px 95.10565px 0 black, -80.9017px 58.77853px 0 black, -80.9017px -58.77853px 0 white, 30.9017px -95.10565px 0 black, 100px 0.0px 0 black;
+    box-shadow: 100px 0px 0 black, 30.9017px 95.10565px 0 black, -80.9017px 58.77853px 0 black, -80.9017px -58.77853px 0 white, 30.9017px -95.10565px 0 black;
   }
 
   /* line 28, style.scss */
   100% {
-    box-shadow: 100px 0px 0 black, 30.9017px 95.10565px 0 black, -80.9017px 58.77853px 0 black, -80.9017px -58.77853px 0 black, 30.9017px -95.10565px 0 white, 100px 0.0px 0 black;
+    box-shadow: 100px 0px 0 black, 30.9017px 95.10565px 0 black, -80.9017px 58.77853px 0 black, -80.9017px -58.77853px 0 black, 30.9017px -95.10565px 0 white;
   }
 }

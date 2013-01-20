@@ -9,7 +9,7 @@ $angle: 360deg / $points;
 
 @function shadow($sel: 0) {
 	$shadow: ();
-	@for $i from 0 through $points {
+	@for $i from 0 through ($points - 1) {
 		$x: ($ray) * cos($angle * $i);
 		$y: ($ray) * sin($angle  * $i);
 		$color: $color1;
