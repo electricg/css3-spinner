@@ -54,10 +54,9 @@ function loader(opts) {
 		for (var i = 0; i <= points; i++) {
 			time = frame * i;
 			result += "\
-				" + time + "% {\
-					box-shadow: " + shadow(i - 1) + ";\
-				}\
-			";
+	" + time + "% {\n\
+		box-shadow: " + shadow(i - 1) + ";\n\
+	}\n";
 		}
 		return result;
 	}
@@ -65,37 +64,36 @@ function loader(opts) {
 	function prefixKeyframes() {
 		var string = '';
 		for (var i = 0; i < prefix.length; i++) {
-			string += "@" + prefix[i] + "keyframes " + animationName + " {\
-				" + keyframes() + "\
-			}";
+			string += "\
+@" + prefix[i] + "keyframes " + animationName + " {\n\
+" + keyframes() + "\
+}\n";
 		}
 		return string;
 	}
 
 
 	string = "\
-.loader {\
-	height: " + loaderHeight + umLenght + ";\
-	width: " + loaderWidth + umLenght + ";\
-	position: relative;\
-}\
-.loader:after {\
-	background: transparent;\
-	border-radius: 100%;\
-	content: '';\
-	display: block;\
-	height: " + size + umLenght + ";\
-	width: " + size + umLenght + ";\
-	position: absolute;\
-	top: " + ray + umLenght + ";\
-	left: " + ray + umLenght +";\
-\
-	-webkit-animation: " + animationName + " " + speed + " infinite linear;\
-	        animation: " + animationName + " " + speed + " infinite linear;\
-	box-shadow: " + shadow(0) + ";\
-}\
-" + prefixKeyframes() + "\
-";
+.loader {\n\
+	height: " + loaderHeight + umLenght + ";\n\
+	width: " + loaderWidth + umLenght + ";\n\
+	position: relative;\n\
+}\n\
+.loader:after {\n\
+	background: transparent;\n\
+	border-radius: 100%;\n\
+	content: '';\n\
+	display: block;\n\
+	height: " + size + umLenght + ";\n\
+	width: " + size + umLenght + ";\n\
+	position: absolute;\n\
+	top: " + ray + umLenght + ";\n\
+	left: " + ray + umLenght +";\n\
+	-webkit-animation: " + animationName + " " + speed + " infinite linear;\n\
+	animation: " + animationName + " " + speed + " infinite linear;\n\
+	box-shadow: " + shadow(0) + ";\n\
+}\n\
+" + prefixKeyframes();
 
 	return string;
 }
