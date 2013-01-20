@@ -3,36 +3,95 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Css3 Spinner example</title>
-	<!-- <link rel="stylesheet" type="text/css" href="css/style.css"> -->
+	<link href='http://fonts.googleapis.com/css?family=Andika' rel='stylesheet' type='text/css'>
 	<style>
+*, *:after, *:before {
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+}
 body {
-	background: #1089E6;
-	padding: 50px;
+	background: #EEE;
+	color: #333;
+	margin: 0 auto;
+	max-width: 600px;
+	padding: 0 10% 10%;
+	text-shadow: 0px 0px 1px #AAA;
+}
+body, input, textarea {
+	font-family: Andika, sans-serif;
+	font-size: 1em;
+}
+abbr {
+	font-variant: small-caps;
+	text-transform: lowercase;
+}
+form div {
+	margin: 0 0 1em;
+}
+sub {
+	vertical-align: baseline;
+}
+input {
+	width: 100%;
+}
+input[type=text] {
+	padding: 0.5em;
+}
+input[type=button] {
+	background: #CCC;
+	border: 1px solid #AAA;
+	color: #111;
+	cursor: pointer;
+	margin: 0;
+	padding: 0.5em 1em;
+	width: auto;
+}
+input[type=button]:hover,
+input[type=button]:focus {
+	background: #AAA;
+}
+input[type=button]:active {
+}
+textarea {
+	display: block;
+	height: 16em;
+	width: 100%;
+}
+.result {
+	border: 1px solid #AAA;
+	margin: 1em 0;
+	padding: 1em;
+	text-align: center;
+}
+.loader {
+	display: inline-block;
 }
 	</style>
 	<style id="loader-style"></style>
 </head>
 <body>
+	<h1><abbr title="Cascading Style Sheets Level 3">CSS3</abbr> Spinner</h1>
 	<form action="#">
 		<div>
 			<label for="points">Points:</label>
-			<input type="range" name="points" id="points" min="3" max="100" value="5">
 			<output for="points" name="pointsOutput"></output>
+			<input type="range" name="points" id="points" min="3" max="100" value="5">
 		</div>
 		<div>
 			<label for="size">Points size <sub>(in pixels)</sub>:</label>
-			<input type="range" name="size" id="size" min="1" max="100" value="10">
 			<output for="size" name="sizeOutput"></output>
+			<input type="range" name="size" id="size" min="1" max="100" value="10">
 		</div>
 		<div>
 			<label for="loaderSize">Loader size <sub>(in pixels)</sub>:</label>
-			<input type="range" name="loaderSize" id="loaderSize" min="5" max="500" value="210">
 			<output for="loaderSize" name="loaderSizeOutput"></output>
+			<input type="range" name="loaderSize" id="loaderSize" min="5" max="500" value="210">
 		</div>
 		<div>
 			<label for="speed">Animation speed <sub>(in seconds)</sub>:</label>
-			<input type="range" name="speed" id="speed" step="0.1" min="0" max="10" value="2">
 			<output for="speed" name="speedOutput"></output>
+			<input type="range" name="speed" id="speed" step="0.1" min="0" max="10" value="2">
 		</div>
 		<div>
 			<label for="color1">Color:</label>
@@ -42,14 +101,17 @@ body {
 			<label for="color2">Highlight color:</label>
 			<input type="text" id="color2" value="#FFF">
 		</div>
-		<div>
-			<input type="button" id="getCode" value="Get code">
-			<textarea id="code" cols="30" rows="10"></textarea>
-		</div>
 	</form>
-	<hr>
 	
-	<div class="loader"></div>
+	<h3>Preview:</h3>
+	<div class="result">
+		<div class="loader"></div>
+	</div>
+	
+	<div>
+		<input type="button" id="getCode" value="Get code">
+		<textarea id="code" cols="30" rows="10"></textarea>
+	</div>
 	
 	<script src="js/jquery-1.9.0.min.js"></script>
 	<script src="js/main.js"></script>
