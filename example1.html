@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Css3 Spinner example</title>
+	<link href='http://fonts.googleapis.com/css?family=Andika' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/spectrum.css">
+	<style>
+*, *:after, *:before {
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+}
+html {
+	padding: 0 10% 10%;
+}
+body {
+	background: #EEE;
+	color: #333;
+	margin: 0 auto;
+	max-width: 700px;
+	text-shadow: 0px 0px 1px #AAA;
+	width: 100%;
+}
+body, input, textarea {
+	font-family: Andika, sans-serif;
+	font-size: 1em;
+}
+abbr {
+	font-variant: small-caps;
+	text-transform: lowercase;
+}
+form > div {
+	margin: 0 0 1em;
+}
+label {
+	display: inline-block;
+	max-width: 100%;
+	width: 220px;
+}
+sub {
+	vertical-align: baseline;
+}
+input {
+	max-width: 100%;
+	width: 200px;
+}
+input[type=text] {
+	padding: 0 0.2em;
+}
+input[type=button] {
+	background: #CCC;
+	border: 1px solid #AAA;
+	color: #111;
+	cursor: pointer;
+	margin: 0;
+	padding: 0.5em 1em;
+	width: auto;
+}
+input[type=button]:hover,
+input[type=button]:focus {
+	background: #AAA;
+}
+input[type=button]:active {
+}
+output {
+	text-align: right;
+	width: 50px;
+}
+textarea {
+	display: block;
+	height: 16em;
+	width: 100%;
+}
+.hide {
+	display: none;
+}
+.result {
+	border: 1px solid #AAA;
+	margin: 1em 0;
+	overflow: auto;
+	padding: 1em;
+	text-align: center;
+}
+.loader {
+	display: inline-block;
+}
+
+@media only screen and (min-width: 600px) {
+	form > div {
+		display: table;
+		width: 100%;
+	}
+	label, input, output {
+		display: table-cell;
+	}
+	input[type=range] {
+		width: 100%;
+	}
+}
+	</style>
+	<style id="loader-style"></style>
+</head>
+<body>
+	<h1><abbr title="Cascading Style Sheets Level 3">CSS3</abbr> Spinner</h1>
+	<form action="#">
+		<div>
+			<label for="points">Points:</label>
+			<input type="range" name="points" id="points" min="3" max="100" value="8">
+			<output for="points" name="pointsOutput"></output>
+		</div>
+		<div>
+			<label for="size">Points size <sub>(in pixels)</sub>:</label>
+			<input type="range" name="size" id="size" min="1" max="100" value="3">
+			<output for="size" name="sizeOutput"></output>
+		</div>
+		<div>
+			<label for="size2">Points size 2 <sub>(in pixels)</sub>:</label>
+			<input type="range" name="size2" id="size2" min="1" max="100" value="12">
+			<output for="size2" name="size2Output"></output>
+		</div>
+		<div>
+			<label for="loaderSize">Loader size <sub>(in pixels)</sub>:</label>
+			<input type="range" name="loaderSize" id="loaderSize" min="5" max="500" value="100">
+			<output for="loaderSize" name="loaderSizeOutput"></output>
+		</div>
+		<div>
+			<label for="speed">Animation speed <sub>(in seconds)</sub>:</label>
+			<input type="range" name="speed" id="speed" step="0.1" min="0" max="10" value="1">
+			<output for="speed" name="speedOutput"></output>
+		</div>
+		<div>
+			<label for="color1">Color:</label>
+			<input type="text" class="js-input-color" id="color1" value="#000">
+		</div>
+	</form>
+	
+	<h4>Preview:</h4>
+	<div class="result">
+		<div class="loader"></div>
+	</div>
+	
+	<h4>Support:</h4>
+	<p>Chrome 26+, Firefox 4+.<br>
+	Opera doesn't support pseudo elements animations.</p>
+	</ul>
+	
+	<div>
+		<input type="button" id="getCode" value="Get code">
+		<textarea id="code" cols="30" rows="10" class="hide"></textarea>
+	</div>
+	
+	<script src="js/jquery-1.9.0.min.js"></script>
+	<script src="js/spectrum.js"></script>
+	<script src="js/main.js"></script>
+	<script>
+(function($) {
+
+	var par = ['size', 'points', 'loaderSize', 'color1', 'size2', 'speed'],
+		parLength = par.length,
+		$el = [],
+		$elOutput = [],
+		$style = $('#loader-style'),
+		$code = $('#code'),
+		$getCode = $('#getCode'),
+		css;
+	
+	for (var i = 0; i < parLength; i++) {
+		$el.push( $('#' + par[i]) );
+		$elOutput.push( $('output[for=' + par[i] + ']') );
+	}
+
+	function init() {
+		var opts = {};
+		for (var i = 0; i < parLength; i++) {
+			$elOutput[i].val( $el[i].val() );
+			opts[par[i]] = $el[i].val();
+		}
+		css = loader1(opts);
+		$style.html('').html(css);
+	}
+
+	init();
+
+	for (var i = 0; i < parLength; i++) {
+		$el[i].change(function() {
+			init();
+		});
+	}
+
+	$getCode.click(function() {
+		$code.removeClass('hide').val(css);
+	});
+
+	// Color picker
+	$(".js-input-color").spectrum({
+		showInput: true,
+		showAlpha: true
+	});
+
+})(jQuery);
+	</script>
+</body>
+</html>

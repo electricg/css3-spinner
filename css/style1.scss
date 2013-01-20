@@ -1,0 +1,62 @@
+$w: 3px;
+$points: 8;
+$ray: 40px;
+$color1: rgba(0, 0, 0, .5);
+$size2: 12px;
+$speed: 1s;
+
+$angle: 360deg / $points;
+
+@function shadow($sel: 0) {
+	$shadow: ();
+	$p: $points - 1;
+	@for $i from 0 through $p {
+		$x: ($ray) * cos($angle * $i);
+		$y: ($ray) * sin($angle  * $i);
+		$color: $color1;
+		$n: abs($sel - $i);
+		@if $i < $sel {
+			$n: $points - $n;
+		}
+		$dim: $size2 - (($size2 - $w) / $p * ($p - $n));
+		$t: $x $y 0 $dim $color;
+		$shadow: append($shadow, $t, comma);
+	}
+	@return $shadow;
+}
+
+@mixin animation() {
+	@for $i from 0 through $points {
+		$time: 100% / ($points) * $i;
+		#{$time} {
+			box-shadow: shadow($i);
+		}
+	}
+}
+
+.loader {
+	height: $ray * 2 + $w;
+	width: $ray * 2 + $w;
+	position: relative;
+  
+	&:after {
+		background: transparent;
+		border-radius: 100%;
+		content: "";
+		display: block;
+		height: $w;
+		width: $w;
+		position: absolute;
+		top: $ray;
+		left: $ray;
+
+		box-shadow: shadow();
+		-webkit-animation: shadow $speed infinite linear;
+		        animation: shadow $speed infinite linear;
+	}
+}
+
+@-webkit-keyframes shadow { @include animation; }
+   @-moz-keyframes shadow { @include animation; }
+     @-o-keyframes shadow { @include animation; }
+        @keyframes shadow { @include animation; }
