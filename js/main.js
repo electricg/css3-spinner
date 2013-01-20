@@ -1,3 +1,8 @@
+String.prototype.rtrimChar = function (find) {
+	var reg = new RegExp("[" + find + "]+$", "g");
+	return this.replace(reg, '');
+}
+
 function loader(opts) {
 	// var size = 10,			// px
 	// 	points = 5,
@@ -30,13 +35,15 @@ function loader(opts) {
 			color,
 			x = y = 0;
 		for (var i = 0; i < points; i++) {
-			x = (ray * Math.cos(angle * i)).toFixed(5);
-			y = (ray * Math.sin(angle * i)).toFixed(5);
+			x = (ray * Math.cos(angle * i)).toFixed(5).rtrimChar('0').rtrimChar('.');
+			y = (ray * Math.sin(angle * i)).toFixed(5).rtrimChar('0').rtrimChar('.');
+			x = (x == 0) ? x : x + umLenght;
+			y = (y == 0) ? y : y + umLenght;
 			color = color1;
 			if (sel === i) {
 				color = color2;
 			}
-			result.push( [x + umLenght, y + umLenght, color].join(' ') );
+			result.push( [x, y, color].join(' ') );
 		}
 		return result.join(', ');
 	}
