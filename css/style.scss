@@ -1,5 +1,5 @@
 $w: 10px;
-$points: 5;
+$points: 20;
 $ray: 100px;
 $color1: #000;
 $color2: #FFF;
@@ -22,12 +22,26 @@ $angle: 360deg / $points;
 	@return $shadow;
 }
 
-@mixin animation() {
+@mixin transform ($val, $list: (-webkit-, -moz-, -ms-, -o-, '')) {
+	@each $prefix in $list {
+		#{$prefix}transform: $val;
+	}
+}
+
+@mixin animation2() {
 	@for $i from 0 through $points {
 		$time: 100% / $points * $i;
 		#{$time} {
 			box-shadow: shadow($i - 1);
 		}
+	}
+}
+@mixin animation($list) {
+	0% {
+		@include transform(rotate(0deg), $list);
+	}
+	100% {
+		@include transform(rotate(360deg), $list);
 	}
 }
 
@@ -48,12 +62,12 @@ $angle: 360deg / $points;
 		left: $ray;
 
 		box-shadow: shadow();
-	-webkit-animation: shadow $speed infinite linear;
-	        animation: shadow $speed infinite linear;
+	-webkit-animation: shadow $speed steps($points) infinite;
+	        animation: shadow $speed steps($points) infinite;
 	}
 }
 
-@-webkit-keyframes shadow { @include animation; }
-   @-moz-keyframes shadow { @include animation; }
-     @-o-keyframes shadow { @include animation; }
-        @keyframes shadow { @include animation; }
+@-webkit-keyframes shadow { @include animation('-webkit-'); }
+   @-moz-keyframes shadow { @include animation('-moz-'); }
+     @-o-keyframes shadow { @include animation('-o-'); }
+        @keyframes shadow { @include animation(''); }

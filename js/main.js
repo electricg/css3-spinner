@@ -35,8 +35,8 @@ function loader(opts) {
 			color,
 			x = y = 0;
 		for (var i = 0; i < points; i++) {
-			x = (ray * Math.cos(angle * i)).toFixed(5).rtrimChar('0').rtrimChar('.');
-			y = (ray * Math.sin(angle * i)).toFixed(5).rtrimChar('0').rtrimChar('.');
+			x = (ray * Math.cos(angle * i)).toFixed(15).rtrimChar('0').rtrimChar('.');
+			y = (ray * Math.sin(angle * i)).toFixed(15).rtrimChar('0').rtrimChar('.');
 			x = (x == 0) ? x : x + umLenght;
 			y = (y == 0) ? y : y + umLenght;
 			color = color1;
@@ -89,11 +89,44 @@ function loader(opts) {
 	position: absolute;\n\
 	top: " + ray + umLenght + ";\n\
 	left: " + ray + umLenght +";\n\
-	-webkit-animation: " + animationName + " " + speed + " infinite linear;\n\
-	animation: " + animationName + " " + speed + " infinite linear;\n\
+	-webkit-animation: " + animationName + " " + speed + " steps(" + points + ") infinite;\n\
+	animation: " + animationName + " " + speed + " steps(" + points + ") infinite;\n\
 	box-shadow: " + shadow(0) + ";\n\
 }\n\
-" + prefixKeyframes();
+" + //+ prefixKeyframes();
+"@-webkit-keyframes shadow {\n\
+  0% {\n\
+    -webkit-transform: rotate(0deg);\n\
+  }\n\
+  100% {\n\
+    -webkit-transform: rotate(360deg);\n\
+  }\n\
+}\n\
+@-moz-keyframes shadow {\n\
+  0% {\n\
+    -moz-transform: rotate(0deg);\n\
+  }\n\
+  100% {\n\
+    -moz-transform: rotate(360deg);\n\
+  }\n\
+}\n\
+@-o-keyframes shadow {\n\
+  0% {\n\
+    -o-transform: rotate(0deg);\n\
+  }\n\
+  100% {\n\
+    -o-transform: rotate(360deg);\n\
+  }\n\
+}\n\
+@keyframes shadow {\n\
+  0% {\n\
+    transform: rotate(0deg);\n\
+  }\n\
+  100% {\n\
+    transform: rotate(360deg);\n\
+  }\n\
+}";
+
 
 	return string;
 }
